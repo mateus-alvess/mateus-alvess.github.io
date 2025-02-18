@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivação Chelovers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="banner">
+        <h1>Motivação Chelovers</h1>
+        <p id="data">Hoje é <span id="data-atual"></span></p>
+    </div>
+
+    <div class="container">
+        <div class="caixa-frase">
+            <p id="frase">Carregando frase motivacional...</p>
+            <p id="autor"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para buscar a frase do dia da API
+        async function carregarFrase() {
+            try {
+                // Faz a requisição para a API
+                const response = await fetch('http://localhost:5000/frase');
+                const data = await response.json(); // Converte a resposta para JSON
+
+                // Exibe a frase na página
+                document.getElementById('frase').textContent = `"${data.frase}"`;
+
+                // Se houver autor, exibe-o
+                if (data.autor) {
+                    document.getElementById('autor').textContent = `- ${data.autor}`;
+                }
+            } catch (error) {
+                console.error('Erro ao carregar a frase:', error);
+                document.getElementById('frase').textContent = "Erro ao carregar a frase. Tente novamente mais tarde.";
+            }
+        }
+
+        // Função para exibir a data atual
+        function exibirDataAtual() {
+            const data = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('data-atual').textContent = data.toLocaleDateString('pt-BR', options);
+        }
+
+        // Carrega a frase e exibe a data ao abrir a página
+        carregarFrase();
+        exibirDataAtual();
+    </script>
+</body>
+</html>

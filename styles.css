@@ -1,0 +1,76 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f9f9f9; /* Fundo claro */
+    color: #333; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Banner roxo */
+.banner {
+    width: 100%;
+    background-color: #6a1b9a; /* Roxo */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner h1 {
+    font-family: 'Pacifico', cursive; /* Fonte arredondada e feminina */
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+/* Container da caixa de frase */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Caixa da frase */
+.caixa-frase {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.caixa-frase p {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.caixa-frase #autor {
+    font-size: 1.2rem;
+    color: #6a1b9a; /* Roxo */
+    font-style: italic;
+}
+/* Estilo para a data */
+#data {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#data-atual {
+    font-weight: bold;
+}
