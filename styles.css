@@ -14,6 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 20px; /* Adiciona um pouco de espaço nas laterais */
 }
 
 /* Banner roxo */
@@ -28,8 +29,19 @@ body {
 
 .banner h1 {
     font-family: 'Pacifico', cursive; /* Fonte arredondada e feminina */
-    font-size: 3rem;
+    font-size: 2.5rem; /* Tamanho menor para celular */
     font-weight: 400;
+}
+
+/* Estilo para a data */
+#data {
+    font-size: 1rem; /* Tamanho menor para celular */
+    color: #fff;
+    margin-top: 10px;
+}
+
+#data-atual {
+    font-weight: bold;
 }
 
 /* Container da caixa de frase */
@@ -47,30 +59,39 @@ body {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 20px; /* Padding menor para celular */
     max-width: 600px;
     width: 100%;
     text-align: center;
 }
 
 .caixa-frase p {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Tamanho menor para celular */
     color: #333;
     margin-bottom: 10px;
 }
 
 .caixa-frase #autor {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Tamanho menor para celular */
     color: #6a1b9a; /* Roxo */
     font-style: italic;
 }
-/* Estilo para a data */
-#data {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-top: 10px;
-}
 
-#data-atual {
-    font-weight: bold;
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 600px) {
+    .banner h1 {
+        font-size: 2rem; /* Tamanho ainda menor para telas muito pequenas */
+    }
+
+    .caixa-frase {
+        padding: 15px; /* Padding menor para telas muito pequenas */
+    }
+
+    .caixa-frase p {
+        font-size: 1rem; /* Tamanho menor para telas muito pequenas */
+    }
+
+    .caixa-frase #autor {
+        font-size: 0.9rem; /* Tamanho menor para telas muito pequenas */
+    }
 }
